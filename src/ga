@@ -1,0 +1,4 @@
+#! /usr/bin/bash
+
+# Description: Add a file to the staging area
+git add $1

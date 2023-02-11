@@ -1,0 +1,4 @@
+#! /usr/bin/bash
+
+# Description: git commit with message and description
+git commit -m "$1" -m "$2"

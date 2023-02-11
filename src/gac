@@ -1,0 +1,25 @@
+#!/bin/bash
+
+files=()
+commit_message=""
+
+while [ "$#" -gt 0 ]; do
+  case "$1" in
+    -f) files+=("$2"); shift 2;;
+    -c) commit_message="$2"; shift 2;;
+    *) echo "Unknown option: $1" >&2; exit 1;;
+  esac
+done
+
+if [ -z "$commit_message" ]; then
+  echo "Commit message is required" >&2
+  exit 1
+fi
+
+if [ "${#files[@]}" -eq 0 ]; then
+  git add .
+else
+  git add "${files[@]}"
+fi
+
+git commit -m "$commit_message"
