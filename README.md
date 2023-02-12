@@ -7,7 +7,6 @@
     - [`gc`](#gc)
     - [`gac`](#gac)
       - [Flags](#flags)
-    - [`gcb`](#gcb)
 
 ## Adding shortcuts to your computer's shell
 
@@ -62,12 +61,3 @@ gac -f <files> -c <commit-message>
 | ---- | ------------------- | -------- | ------- |
 | `-f` | The files to commit | No       | `.`     |
 | `-c` | The commit message  | Yes      | N/A     |
-
-### `gcb`
-
-```bash
-gcb <branch-name>
-gcb "fix-bug"
-```
-
-Switches to the specified branch, or creates it if it doesn't exist
