@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Check if branch is specified
+if [ $# -eq 0 ]
+then
+    # If no branch specified, switch to main branch
+    branch="main"
+else
+    # If branch specified, switch to the specified branch
+    branch=$1
+fi
+
+# Check if the branch exists
+if git branch | grep -q $branch; then
+    git checkout $branch
+else
+    # If branch doesn't exist, create it
+    git checkout -b $branch
+fi
